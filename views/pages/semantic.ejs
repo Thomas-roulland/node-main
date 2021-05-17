@@ -1,0 +1,44 @@
+<%-include('header.ejs') %>
+
+<div class="ui text container">
+    <h1 class="ui inverted header">
+      Utiliser Semantic UI 
+    </h1>
+    <h2> Facilité et rapidité</h2>
+    <br><br>
+    <a class="ui huge primary button" href="https://nodejs.org/fr/" target="_blank">Voir <i class="down arrow icon"></i></a>
+  </div>
+
+</div>
+
+
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Installation</h3>
+            <p>Installer le .zip sur le site :</p>
+            <a class="ui huge primary button" href="https://github.com/Semantic-Org/Semantic-UI-CSS/archive/master.zip" target="_blank">Installer <i class="share square icon"></i></a>
+            <br><br>
+            <p>Ensuite, créer un nouveau dossier puis mettez tout le contenu dedans </p>
+            <h3 class="ui header">Application</h3>
+            <p>Vous devez ensuite rendre static le dossier pour ceci : </p>
+            <code>
+                app.use(express.static('public'))
+            </code>
+            <br><br>
+            <p>Une fois fait vous pourrez donc l'utiliser et apprendre la documentation</p>
+            <br>
+        </div>
+        <div class="six wide right floated column">
+            <img src="https://react.semantic-ui.com/logo.png" class="ui large bordered rounded image">
+          </div>
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button" href="https://semantic-ui.com/elements/button.html" target="_blank">Voir Semantic DOC</a>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<%-include('footer.ejs') %>

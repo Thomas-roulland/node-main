@@ -31,23 +31,34 @@ app.get('/', (request, response) =>{
   })
 
   app.get('/test.ejs', (request, response) =>{
-    console.log(request.session)
-    response.render('pages/test')
+    let Message = require('./models/message')
+    Message.all(function (messages) {
+        response.render('pages/test',{messages: messages})
+    })
   })
 
+  app.get('/pgserv.ejs', (request, response) =>{
+      response.render('pages/pgserv')
+  })
+  app.get('/semantic.ejs', (request, response) =>{
+    response.render('pages/semantic')
+})
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
 
+
+//Post
 app.post('/test.ejs', (request, response) => {
 
-    if(request.body.messsage === undefined || request.body.messsage === ''){
+    if(request.body.message === undefined || request.body.message === ''){
         request.flash('error', "vous n'avez pas posté de message")
         response.redirect('/test.ejs')
     }else {
         let Message = require('./models/message')
         Message.create(request.body.message, function (){
-            request.flash('succes', "Merci")
+        request.flash('success', "Merci")
+        response.redirect('/test.ejs')
         })
-    }
+    }    
 })

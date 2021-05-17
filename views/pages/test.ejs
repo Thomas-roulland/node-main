@@ -1,25 +1,49 @@
 <%-include('header.ejs') %>
 
+<div class="ui text container">
+    <h1 class="ui inverted header">
+      Apprendre a utiliser les GET/POST
+    </h1>
+    <br><br>
+    <a class="ui huge primary button" href="" target="_blank">Voir <i class="down arrow icon"></i></a>
+  </div>
+</div>
 <div class="ui main container">
-<form action="" method="POST" class="ui form">
+    <form action="" method="POST" class="ui form">
+    
+        <div class="field" id="un">
+            <label for="message" > Message</label>
+    
+            <textarea name="message" id="message" ></textarea>
+        </div>
+    
+        <button type="submit" class="ui blue labeled submit icon button">
+            <i class="icon edit"></i>Envoyer
+        </button>
+    </form>
+    
 
-    <div class="field" id="un">
-        <label for="message" > Message</label>
-
-        <textarea name="message" id="message" ></textarea>
-    </div>
-
-    <button type="submit" class="ui blue labeled submit icon button">
-        <i class="icon edit"></i>Envoyer
-    </button>
-</form>
-
+<div class="ui comments">
+    <h3 class="ui dividing header">Commentaires</h3>
+    <% for (message of messages) { %>
+        <div class="comment">
+            <a href="" class="avatar">
+                <img src="https://randomuser.me/api/portraits/lego/7.jpg" alt="">
+            </a>
+            <div class="content">
+                <div class="metadata">
+                    <div class="date">
+                        <%=  message.create_at.fromNow() %>
+                    </div>
+                </div>
+                <div class="test"><%= message.content%></div>
+            </div>
+        </div>
+    <% } %>
+</div>
 </div>
 
 <br><br>
-<br><br>
-<br><br>
-<br><br>
-<br>
+
 
 <%- include('footer.ejs') %>    

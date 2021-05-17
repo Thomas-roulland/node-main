@@ -7,7 +7,7 @@
     <style type="text/css">
 
         #un{
-          margin-top: 25%;
+          margin-top: 10%;
         }
 
         .hidden.menu {
@@ -141,8 +141,8 @@
         </a>
         <a class="active item " href="/">Accueil</a>
         <a class="item" href="test.ejs">Utiliser POST/GET</a>
-        <a class="item">Faire un Server</a>
-        <a class="item">CSS Semantic UI</a>
+        <a class="item" href="pgserv.ejs">Faire un Server</a>
+        <a class="item" href="semantic.ejs">CSS Semantic UI</a>
         <div class="right item">
           <a class="ui inverted button">Connexion</a>
           <a class="ui inverted button">Inscription</a>
@@ -155,3 +155,9 @@
             <%= flash.error %>
         </div>
         <% } %>
+
+        <% if(locals.flash && locals.flash.success) { %>
+          <div class="ui positive message">
+              <%= flash.success %>
+          </div>
+          <% } %>
