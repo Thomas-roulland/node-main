@@ -1,7 +1,7 @@
 module.exports = function (request, response, next){
-    request.flash = function (type, content) {
+
         if (request.session.flash){
-            response.locale.flash = request.session.flash
+            response.locals.flash = request.session.flash
             request.session.flash = undefined
         }
         
@@ -11,5 +11,6 @@ module.exports = function (request, response, next){
             }
             request.session.flash[type] = content 
         }
-    }
+        
+    next() 
 }
