@@ -2,9 +2,13 @@
 <html >
 <head>
     
-    <title>Document</title>
+    <title>Node by Thomas</title>
     <link rel="stylesheet" href="/assets/semantic.min.css">
     <style type="text/css">
+
+        #un{
+          margin-top: 25%;
+        }
 
         .hidden.menu {
           display: none;
@@ -91,35 +95,8 @@
           }
         }
       </style>
-       <script src="assets/library/jquery.min.js"></script>
-       <script src="../dist/components/visibility.js"></script>
-       <script src="../dist/components/sidebar.js"></script>
-       <script src="../dist/components/transition.js"></script>
-       <script>
-       $(document)
-         .ready(function() {
-     
-           // fix menu when passed
-           $('.masthead')
-             .visibility({
-               once: false,
-               onBottomPassed: function() {
-                 $('.fixed.menu').transition('fade in');
-               },
-               onBottomPassedReverse: function() {
-                 $('.fixed.menu').transition('fade out');
-               }
-             })
-           ;
-     
-           // create sidebar and attach to menu open
-           $('.ui.sidebar')
-             .sidebar('attach events', '.toc.item')
-           ;
-     
-         })
-       ;
-       </script>
+
+      
 </head>
 <body>
     
@@ -163,9 +140,9 @@
           <i class="sidebar icon"></i>
         </a>
         <a class="active item " href="/">Accueil</a>
-        <a class="item" href="test.ejs">POST/GET</a>
-        <a class="item">server</a>
-        <a class="item">Semantic UI</a>
+        <a class="item" href="test.ejs">Utiliser POST/GET</a>
+        <a class="item">Faire un Server</a>
+        <a class="item">CSS Semantic UI</a>
         <div class="right item">
           <a class="ui inverted button">Connexion</a>
           <a class="ui inverted button">Inscription</a>

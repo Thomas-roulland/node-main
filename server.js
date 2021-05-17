@@ -50,5 +50,4 @@ app.post('/test.ejs', (request, response) => {
             request.flash('succes', "Merci")
         })
     }
-    response.redirect('/test.ejs')
 })
