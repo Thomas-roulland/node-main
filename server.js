@@ -3,7 +3,8 @@ const app = express()
 const port = 8080;
 let bodyParser = require('body-parser')
 let session = require('express-session')
-const { localsName } = require('ejs')
+const { localsName } = require('ejs');
+const { response } = require('express');
 
 
 
@@ -40,9 +41,14 @@ app.get('/', (request, response) =>{
   app.get('/pgserv.ejs', (request, response) =>{
       response.render('pages/pgserv')
   })
+
+  app.get('/connexion.ejs', (request,response) => {
+      response.render('pages/connexion')
+  })
   app.get('/semantic.ejs', (request, response) =>{
     response.render('pages/semantic')
 })
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
